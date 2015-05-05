@@ -35,6 +35,8 @@ public class PrivateDateLeakage extends Activity {
 		EditText usernameText = (EditText)findViewById(R.id.username);
 		EditText passwordText = (EditText)findViewById(R.id.password);
 		
+		passwordText.setText(((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId()); //source
+		
 		String uname = usernameText.toString();
 		String pwd = passwordText.getText().toString(); //source
 		
