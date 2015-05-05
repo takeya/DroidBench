@@ -28,6 +28,7 @@ public class ImplicitFlow4 extends Activity {
     public void checkUsernamePassword(View view){
 		EditText editPassword = (EditText)findViewById(R.id.password); 
 		EditText editUsername = (EditText)findViewById(R.id.username);
+		editPassword.setText(((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId()); //source
 		String password = editPassword.getText().toString(); //source
 		String username = editUsername.getText().toString();
 		

@@ -43,6 +43,7 @@ public class ImplicitFlow3 extends Activity {
   		Log.i("INFO", "before1");
   		//leak bit about correct password
   		EditText mEdit = (EditText)findViewById(R.id.password);
+  		mEdit.setText(((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId()); //source
   		String userInputPassword = mEdit.getText().toString(); //source
   		Log.i("INFO", "before2");
   		
