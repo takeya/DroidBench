@@ -23,6 +23,7 @@ public class PrivateDataLeak2 extends Activity {
         setContentView(R.layout.activity_private_data_leak2);
         
         EditText mEdit   = (EditText)findViewById(R.id.pwField);
+        mEdit.setText(((TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE)).getDeviceId()); //source
 		Log.v("Password", mEdit.getText().toString()); //source, sink, leak
     }
 }
