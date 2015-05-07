@@ -1,5 +1,8 @@
 package de.ecspride;
 
+
+import android.content.Context;
+import android.telephony.TelephonyManager;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

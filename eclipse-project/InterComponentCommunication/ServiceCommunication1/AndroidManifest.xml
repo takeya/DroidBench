@@ -26,7 +26,7 @@
     >
 
 
-    <uses-sdk android:minSdkVersion="4" android:targetSdkVersion="19" />
+    <uses-sdk android:minSdkVersion="7" android:targetSdkVersion="19" />
 
     <application 
             android:label="ActivityMessenger"

@@ -1,5 +1,8 @@
 package de.ecspride;
 
+
+import android.content.Context;
+import android.telephony.TelephonyManager;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
