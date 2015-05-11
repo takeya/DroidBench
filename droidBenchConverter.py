@@ -1,4 +1,4 @@
-__author__ = 'Pantay'
+__author__ = 'Takeya'
 
 """
 Converts the DroidBench projects to a gradle compatible project structure
