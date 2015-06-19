@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 
 /**
  * @testcase_name ArrayCopy
@@ -30,6 +29,5 @@ public class MainActivity extends Activity {
 
         SmsManager sms = SmsManager.getDefault();
         sms.sendTextMessage("+49 1234", null, arraycopy[0], null, null); //sink, leak
-        Log.i("DroidBench", arraycopy[0]); //sink
     }
 }

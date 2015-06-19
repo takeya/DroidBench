@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 
 /**
  * @testcase_name ICC-Broadcast-Programmatic-IntentFilter
@@ -30,7 +29,6 @@ public class BroadcastTest extends Activity {
                     if (taint != null) {
                         SmsManager sms = SmsManager.getDefault();
                         sms.sendTextMessage("+49 1234", null, taint, null, null); //sink, leak
-                        Log.i("DroidBench", taint); //sink
                     }
                 }				  
             };

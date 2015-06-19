@@ -19,7 +19,6 @@ package edu.mit.fragments;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.telephony.SmsManager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,7 +66,6 @@ public class ArticleFragment extends Fragment {
         article.setText(Ipsum.Articles[position]);
         mCurrentPosition = position;
 
-	Log.i("DroidBench", value);  //sink, leak
         SmsManager sms = SmsManager.getDefault();
         sms.sendTextMessage("+49 1234", null, value, null, null); //sink, leak
     }
