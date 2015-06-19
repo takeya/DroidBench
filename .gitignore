@@ -33,3 +33,6 @@ proguard/
 
 # Log Files
 *.log
+
+#Idea files
+studio-project/.idea/
