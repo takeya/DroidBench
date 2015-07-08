@@ -39,9 +39,9 @@ public class MultiHandlers2 extends Activity implements IDataProvider {
 	@Override
     protected void onResume (){
     	super.onResume();
-    	Log.d("Location", "Location: " + data); //sink, leak
+    	Log.d("Location", "Location: " + data); //sink
 		SmsManager sms = SmsManager.getDefault();
-		sms.sendTextMessage("+49 1234", null, data, null, null); //sink, leak
+		sms.sendTextMessage("+49 1234", null, data, null, null); //sink
     }
 
 	@Override
