@@ -1,7 +1,7 @@
 THIS FORK
 ==========
-in this for the eclipse project has been converted to an android-studio project with gradle file for easy build.
-further more the sources of password fields have been replaced with IMEI ID of the device for scan engine which do not check for password fields.
+in this project, the eclipse project has been converted to an android-studio project with gradle files for easy build.
+Further more the sources of password fields have been replaced with IMEI ID of the device for scan engines which do not check for password fields.
 
 
 DroidBench 2.0
