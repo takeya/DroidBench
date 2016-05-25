@@ -1,4 +1,4 @@
-include ':InterAppCommunication:StartActivityForResult1'
+include ':InterAppCommunication:StartActivityForResult1', ':manymethodcalls'
 include ':InterAppCommunication:SendSMS'
 include ':InterAppCommunication:Echoer'
 include ':GeneralJava:Exceptions4'
