@@ -1,22 +1,15 @@
-# Eclipse project files
-/.metadata
-/appcompat_v7
-/appcompat_v7_2
-/appcompat_v7_3
-/appcompat_v7_4
-/eclipse-project/.metadata/.plugins/org.eclipse.core.resources/.history
 
-# Built application files
-#*.apk
-#*.ap_
-
-# Files for the Dalvik VM
+# files for the dex VM
 *.dex
 
 # Java class files
 *.class
 
-# Generated files
+# AppScan Source
+*.paf
+*.ppf
+
+# generated files
 bin/
 gen/
 
@@ -36,3 +29,12 @@ proguard/
 
 #Idea files
 studio-project/.idea/
+# Eclipse project files
+/.metadata
+/appcompat_v7
+/appcompat_v7_2
+/appcompat_v7_3
+/appcompat_v7_4
+/eclipse-project/.metadata/.plugins/org.eclipse.core.resources/.history
+/eclipse-project/.metadata
+/eclipse-project/.recommenders
